@@ -1,0 +1,131 @@
+(base) C:\Users\lenovo>cd C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP
+
+(base) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>conda activate my_dagster_env
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>python DAP_cloud_storage_aws.py
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+Traceback (most recent call last):
+  File "DAP_cloud_storage_aws.py", line 71, in <module>
+    instance = DagsterInstance.get()
+  File "C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\dagster\_core\instance\__init__.py", line 560, in get
+    raise DagsterHomeNotSetError(
+dagster._core.errors.DagsterHomeNotSetError: The environment variable $DAGSTER_HOME is not set.
+Dagster requires this environment variable to be set to an existing directory in your filesystem. This directory is used to store metadata across sessions, or load the dagster.yaml file which can configure storing metadata in an external database.
+You can resolve this error by exporting the environment variable. For example, you can run the following command in your shell or include it in your shell configuration file:
+        export DAGSTER_HOME=~"/dagster_home"
+or PowerShell
+$env:DAGSTER_HOME = ($home + '\dagster_home')or batchset DAGSTER_HOME=%UserProfile%/dagster_homeAlternatively, DagsterInstance.ephemeral() can be used for a transient instance.
+
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>set DAGSTER_HOME=C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>python DAP_cloud_storage_aws.py
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+Traceback (most recent call last):
+  File "DAP_cloud_storage_aws.py", line 71, in <module>
+    instance = DagsterInstance.get()
+  File "C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\dagster\_core\instance\__init__.py", line 584, in get
+    raise DagsterInvariantViolationError(
+dagster._core.errors.DagsterInvariantViolationError: $DAGSTER_HOME "C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home" is not a directory or does not exist. Dagster requires this environment variable to be set to an existing directory in your filesystem
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>cd C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>conda activate my_dagster_env
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>python DAP_cloud_storage_aws.py
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+No dagster instance configuration file (dagster.yaml) found at C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home. Defaulting to loading and storing all metadata with C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home. If this is the desired behavior, create an empty dagster.yaml file in C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home.
+
+  Telemetry:
+
+  As an open-source project, we collect usage statistics to inform development priorities. For more
+  information, read https://docs.dagster.io/getting-started/telemetry.
+
+  We will not see or store any data that is processed by your code.
+
+  To opt-out, add the following to $DAGSTER_HOME/dagster.yaml, creating that file if necessary:
+
+    telemetry:
+      enabled: false
+
+
+  Welcome to Dagster!
+
+  If you have any questions or would like to engage with the Dagster team, please join us on Slack
+  (https://bit.ly/39dvSsF).
+
+2024-04-23 14:14:55 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - RUN_START - Started execution of run for "etl_pipeline".
+2024-04-23 14:14:55 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - ENGINE_EVENT - Executing steps using multiprocess executor: parent process (pid: 7692)
+2024-04-23 14:14:55 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - extract_from_postgres - STEP_WORKER_STARTING - Launching subprocess for "extract_from_postgres".
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+2024-04-23 14:14:59 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - STEP_WORKER_STARTED - Executing step "extract_from_postgres" in subprocess.
+2024-04-23 14:14:59 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - RESOURCE_INIT_STARTED - Starting initialization of resources [io_manager, postgres].
+2024-04-23 14:15:00 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - RESOURCE_INIT_SUCCESS - Finished initialization of resources [io_manager, postgres].
+2024-04-23 14:15:00 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - LOGS_CAPTURED - Started capturing logs in process (pid: 9044).
+2024-04-23 14:15:00 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - STEP_START - Started execution of step "extract_from_postgres".
+2024-04-23 14:15:02 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+2024-04-23 14:15:02 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - extract_from_postgres - Writing file at: C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home\storage\92393c33-dc9e-46a7-a72b-25d016024e81\extract_from_postgres\result using PickledObjectFilesystemIOManager...
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+2024-04-23 14:15:02 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2024-04-23 14:15:02 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 9044 - extract_from_postgres - STEP_SUCCESS - Finished execution of step "extract_from_postgres" in 2.32s.
+2024-04-23 14:15:02 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - transform_data - STEP_WORKER_STARTING - Launching subprocess for "transform_data".
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - STEP_WORKER_STARTED - Executing step "transform_data" in subprocess.
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - RESOURCE_INIT_STARTED - Starting initialization of resources [io_manager].
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - RESOURCE_INIT_SUCCESS - Finished initialization of resources [io_manager].
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - LOGS_CAPTURED - Started capturing logs in process (pid: 6952).
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - STEP_START - Started execution of step "transform_data".
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - transform_data - Loading file from: C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home\storage\92393c33-dc9e-46a7-a72b-25d016024e81\extract_from_postgres\result using PickledObjectFilesystemIOManager...
+2024-04-23 14:15:07 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - LOADED_INPUT - Loaded input "dataframe" using input manager "io_manager", from output "result" of step "extract_from_postgres"
+2024-04-23 14:15:08 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - STEP_INPUT - Got input "dataframe" of type "DataFrame". (Type check passed).
+2024-04-23 14:15:08 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+2024-04-23 14:15:08 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - transform_data - Writing file at: C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home\storage\92393c33-dc9e-46a7-a72b-25d016024e81\transform_data\result using PickledObjectFilesystemIOManager...
+2024-04-23 14:15:08 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2024-04-23 14:15:08 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 6952 - transform_data - STEP_SUCCESS - Finished execution of step "transform_data" in 157ms.
+2024-04-23 14:15:08 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - load_to_postgres - STEP_WORKER_STARTING - Launching subprocess for "load_to_postgres".
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - STEP_WORKER_STARTED - Executing step "load_to_postgres" in subprocess.
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - RESOURCE_INIT_STARTED - Starting initialization of resources [io_manager, postgres].
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - RESOURCE_INIT_SUCCESS - Finished initialization of resources [io_manager, postgres].
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - LOGS_CAPTURED - Started capturing logs in process (pid: 2356).
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - STEP_START - Started execution of step "load_to_postgres".
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - load_to_postgres - Loading file from: C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home\storage\92393c33-dc9e-46a7-a72b-25d016024e81\transform_data\result using PickledObjectFilesystemIOManager...
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - LOADED_INPUT - Loaded input "dataframe" using input manager "io_manager", from output "result" of step "transform_data"
+2024-04-23 14:15:13 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - STEP_INPUT - Got input "dataframe" of type "DataFrame". (Type check passed).
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+C:\Users\lenovo\anaconda3\envs\my_dagster_env\lib\site-packages\pydantic\_internal\_config.py:334: UserWarning: Valid config keys have changed in V2:
+* 'keep_untouched' has been renamed to 'ignored_types'
+  warnings.warn(message, UserWarning)
+2024-04-23 14:15:18 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2024-04-23 14:15:18 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - load_to_postgres - Writing file at: C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP\dagster_home\storage\92393c33-dc9e-46a7-a72b-25d016024e81\load_to_postgres\result using PickledObjectFilesystemIOManager...
+2024-04-23 14:15:18 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2024-04-23 14:15:18 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 2356 - load_to_postgres - STEP_SUCCESS - Finished execution of step "load_to_postgres" in 4.88s.
+2024-04-23 14:15:19 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - ENGINE_EVENT - Multiprocess executor: parent process exiting after 24.11s (pid: 7692)
+2024-04-23 14:15:19 +0100 - dagster - DEBUG - etl_pipeline - 92393c33-dc9e-46a7-a72b-25d016024e81 - 7692 - RUN_SUCCESS - Finished execution of run for "etl_pipeline".
+
+(my_dagster_env) C:\Users\lenovo\Downloads\DAP project\Structural_Dataset_DAP>python DAP_cloud_storage_aws.py
