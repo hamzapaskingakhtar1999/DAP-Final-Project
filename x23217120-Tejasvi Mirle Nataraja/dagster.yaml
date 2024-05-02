@@ -1,0 +1,28 @@
+run_storage:
+  module: dagster_postgres.run_storage
+  class: PostgresRunStorage
+  config:
+    postgres_db:
+      username: postgres
+      password: hamzapaskingakhtar
+      hostname: database-1.cjm246e0wkky.eu-north-1.rds.amazonaws.com
+      db_name: dab-final-database
+      port: 5432
+# and this config sets the credentials via DB connection string / url:
+#storage:
+ # postgres:
+  #  postgres_url: database-1.cjm246e0wkky.eu-north-1.rds.amazonaws.com
+# You could directly set the `base_dir` key
+compute_logs:
+  module: dagster.core.storage.local_compute_log_manager
+  class: LocalComputeLogManager
+  config:
+    base_dir: C:\\Users\\lenovo\\Downloads\\DAP project\\Structural_Dataset_DAP
+    
+schedules:
+  use_threads: true
+  num_workers: 8
+
+run_launcher:
+  module: dagster.core.launcher
+  class: DefaultRunLauncher
